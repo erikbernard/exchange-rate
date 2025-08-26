@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+/* Opcional: Adiciona um anti-aliasing melhor para a fonte ficar mais suave */
+
+:root {
+  --color-primary: #ff725e;
+  --color-error: #ef4444;
+
+}
+
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*Remova a margem e o padding padrão da maioria dos elementos.*/
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+fieldset,
+dl,
+dd,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Remova os estilos de lista padrão.*/
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/*resete imagens e mídias.*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*Remova a herança de estilos de fonte para inputs e botões.*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*Remova o sublinhado padrão dos links.*/
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Garante que a raiz do HTML ocupe toda a altura da tela.*/
+html:focus-within {
+  scroll-behavior: smooth;
+}
