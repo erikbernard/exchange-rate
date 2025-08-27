@@ -1,0 +1,16 @@
+.header {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 var(--spacing-md);
+
+  &__logo{
+    padding: var(--spacing-md);
+  }
+  &__line{
+    border: 1px solid var(--color-divider);
+    margin: 0;
+    width: 100%;
+  }
+}
