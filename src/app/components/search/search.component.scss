@@ -1,0 +1,107 @@
+:host{
+  display: flex;
+  flex-direction: column;
+}
+
+.button-search{
+  margin: var(--spacing-xlg) 0;
+  padding: 14px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  border: none;
+  color: white;
+  background-color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  &:hover{
+    filter: contrast(.9);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.form-field {
+  position: relative;
+  background-color: var(--color-grey-300);
+  border-top-left-radius: var(--border-radius-xs);
+  border-top-right-radius: var(--border-radius-xs);
+  padding: var(--spacing-md);
+  border: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-grey-200);
+    transition: all 0.2s ease-in-out;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: all 0.2s ease-in-out;
+    z-index: 2;
+  }
+
+  &__label {
+    font-size: var(--spacing-md);
+    font-weight: 400;
+    border: none;
+    position: absolute;
+    top: 20px;
+    left: var(--spacing-md);
+    color: var(--color-dark-300);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    transform-origin: left top;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: var(--color-dark-300);
+    padding-top: var(--spacing-sm);
+    text-transform: uppercase;
+  }
+}
+
+.form-error{
+  color: var(--color-alert);
+  font-size: 0.75rem;
+  margin: var(--spacing-xs) 0 0 var(--spacing-md);
+}
+
+.form-field:focus-within,
+.form-field:has(.form-field__input:not(:placeholder-shown)) {
+  &::before {
+    left: 0;
+    right: 0;
+  }
+  .form-field__label {
+    color: var(--color-primary);
+    transform: translateY(-8px) scale(0.75);
+    font-size: 0.75rem;
+  }
+}
+
+.form-field.invalid {
+  &::before {
+    background-color: var(--color-alert);
+  }
+
+  &:focus-within .form-field__label,
+  &:has(.form-field__input:not(:placeholder-shown)) .form-field__label {
+    color: var(--color-alert);
+  }
+}
