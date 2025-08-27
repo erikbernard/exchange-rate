@@ -1,0 +1,14 @@
+@if (rate){
+<div class="current-rate">
+  <div class="current-rate__header">
+    <div class="current-rate__title-group">
+      <h2 class="current-rate__title">Exchange rate now</h2>
+      <p class="current-rate__timestamp">{{ rate!.lastUpdatedAt | date:'dd/MM/yyyy - HH:mm' }}</p>
+    </div>
+    <p class="current-rate__symbols">{{ rate!.fromSymbol }}/{{ rate!.toSymbol }}</p>
+  </div>
+  <div class="current-rate__value-box">
+    <p class="current-rate__value">{{ rate!.exchangeRate | currency:'BRL':'symbol':'1.2-2' }}</p>
+  </div>
+</div>
+}
