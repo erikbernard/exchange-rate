@@ -1,0 +1,10 @@
+<fieldset class="form-field" [ngClass]="invalid ?'invalid': ''">
+  <input id="search" class="form-field__input" type="text" placeholder=" " [(ngModel)]="search">
+  <label for="search" class="form-field__label">Enter the currency code</label>
+</fieldset>
+
+@if(invalid) {
+  <span class="form-error">check if the currency code is valid and try again!</span>
+}
+
+<button class="button-search" (click)="onSearch.emit(search)">Exchange result</button>

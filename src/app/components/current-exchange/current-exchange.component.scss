@@ -1,0 +1,37 @@
+.current-rate {
+  width: 100%;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+  }
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-dark-100);
+  }
+  &__timestamp {
+    font-size: 0.875rem;
+    color: var(--color-dark-200);
+    padding-top: var(--spacing-xs);
+  }
+  &__symbols {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  &__value-box {
+    background-color: var(--color-blue-100);
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-md);
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  &__value {
+    color: var(--color-primary);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}

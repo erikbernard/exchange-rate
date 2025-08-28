@@ -1,0 +1,21 @@
+<div class="daily-list">
+  <div class="daily-list__accordion-header" (click)="toggle()">
+    <h2 class="daily-list__title">LAST 30 DAYS</h2>
+    <span [innerHTML]="isOpen ? minusIcon : plusIcon" class="daily-list__icon"></span>
+  </div>
+  @if (isOpen) {
+  <div class="daily-list__content">
+    @for (item of history; track item.date; let i = $index) {
+      <app-daily-exchange-item
+       @toggle
+        [item]="item"
+        [previousClose]="(history | previousClose:i )">
+      </app-daily-exchange-item>
+    } @empty {
+      <p>No historical data available.</p>
+    }
+  </div>
+  } @else {
+    <hr class="daily-list__divider">
+  }
+</div>
