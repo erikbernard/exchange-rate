@@ -102,7 +102,7 @@ Siga os passos abaixo para executar o projeto em seu ambiente local.
 
 ### Configurando Variáveis de Ambiente
 
-Antes de executar, você precisa configurar as variáveis de ambiente. Renomeie o arquivo `src/environments/environment.ts.example` (se houver) para `src/environments/environment.ts` e preencha as informações da API.
+Antes de executar, você precisa configurar as variáveis de ambiente. No `src/environments/environment.ts` e preencha as informações da API.
 
 **`src/environments/environment.ts`**
 ```typescript
