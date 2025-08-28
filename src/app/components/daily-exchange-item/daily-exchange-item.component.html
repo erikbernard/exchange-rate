@@ -7,35 +7,33 @@
     <div class="daily-item__group">
       <div class="daily-item__row">
         <span class="daily-item__label">OPEN:</span>
-        <span class="daily-item__value">{{ item.open | currency:'BRL':'R$':'1.4-4' }}</span>
+        <span class="daily-item__value">{{ item.open | currency:'BRL':'symbol':'1.4-4' }}</span>
       </div>
       <div class="daily-item__row">
         <span class="daily-item__label">CLOSE:</span>
-        <span class="daily-item__value">{{ item.close | currency:'BRL':'R$':'1.4-4' }}</span>
+        <span class="daily-item__value">{{ item.close | currency:'BRL':'symbol':'1.4-4' }}</span>
       </div>
     </div>
     <div class="daily-item__group">
       <div class="daily-item__row">
         <span class="daily-item__label">HIGH:</span>
-        <span class="daily-item__value">{{ item.high | currency:'BRL':'R$':'1.4-4' }}</span>
+        <span class="daily-item__value">{{ item.high | currency:'BRL':'symbol':'1.4-4' }}</span>
       </div>
       <div class="daily-item__row">
         <span class="daily-item__label">LOW:</span>
-        <span class="daily-item__value">{{ item.low | currency:'BRL':'R$':'1.4-4' }}</span>
+        <span class="daily-item__value">{{ item.low | currency:'BRL':'symbol':'1.4-4' }}</span>
       </div>
     </div>
   </div>
-  @if (diffPercentage !== null) {
   <div class="daily-item__footer">
     <span class="daily-item__label">CLOSE DIFF (%):</span>
     <div class="daily-item__diff" [ngClass]="{
-                'daily-item__diff--positive': diffPercentage > 0,
-                'daily-item__diff--negative': diffPercentage < 0
+                'daily-item__diff--positive':  ( item | calculateDiff:previousClose) > 0,
+                'daily-item__diff--negative':  ( item | calculateDiff:previousClose) < 0
               }">
-      <span>{{ diffPercentage | number:'1.2-2' }}%</span>
-      <span [innerHTML]="diffPercentage > 0 ? arrowDown : arrowDown" ></span>
+      <span>{{ ( item | calculateDiff:previousClose) | number:'1.2-2' }}%</span>
+      <span [innerHTML]=" ( item | calculateDiff:previousClose) > 0 ? arrowUp : arrowDown"></span>
     </div>
   </div>
-  }
 </div>
 }
