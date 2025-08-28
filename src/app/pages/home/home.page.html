@@ -1,0 +1,15 @@
+<app-header />
+<main class="main-content">
+  <h1 class="main-content__title">BRL Exchange Rate</h1>
+
+  <app-search [invalid]="error$ | async" (onSearch)="onSearch($event)" />
+
+  <hr class="main__divider">
+  
+  @if ((currentRate$ | async) && !(error$ | async)) {
+    <app-current-exchange [rate]="currentRate$ | async" />
+    <app-daily-exchange-list [history]="(dailyHistory$ | async) ?? []" />
+  }
+
+</main>
+<app-footer />
