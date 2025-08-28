@@ -9,7 +9,7 @@
       <app-daily-exchange-item
        @toggle
         [item]="item"
-        [previousClose]="getPreviousClose(i)">
+        [previousClose]="(history | previousClose:i )">
       </app-daily-exchange-item>
     } @empty {
       <p>No historical data available.</p>
