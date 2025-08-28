@@ -14,7 +14,7 @@ import {FormsModule} from "@angular/forms";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SearchComponent {
-  @Input() invalid: boolean = true;
+  @Input() invalid: boolean | null = true;
   @Input() search: string = '';
   @Output() onSearch: EventEmitter<string> = new EventEmitter<string>();
 

@@ -26,9 +26,10 @@ describe('SearchComponent', () => {
   it('should display the error message and the "invalid" class by default', () => {
     const errorSpan = fixture.debugElement.query(By.css('.form-error'));
     const fieldset = fixture.debugElement.query(By.css('.form-field'));
+    const textContent = 'check if the currency code is valid and try again!';
 
     expect(errorSpan).toBeTruthy();
-    expect(errorSpan.nativeElement.textContent.trim()).toBe('Valor invalido');
+    expect(errorSpan.nativeElement.textContent.trim()).toBe(textContent);
     expect(fieldset.classes['invalid']).toBe(true);
   });
 
