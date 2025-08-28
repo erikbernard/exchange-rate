@@ -4,7 +4,8 @@
   background-color: var(--color-primary);
   text-align: center;
   color: white;
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
   &__text {
     font-size: 0.875rem;
     font-weight: 400;
